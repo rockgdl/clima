@@ -1,11 +1,11 @@
 package com.algartech.clima.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity // This tells Hibernate to make a table out of this class
 @Table(name = "historico", schema = "clima")
@@ -34,5 +34,12 @@ public class Historico {
 		this.ciudad = ciudad;
 	}
 
+	@Override
+	public String toString() {
+		return "Historico [historicoID=" + historicoID + ", ciudad=" + ciudad + "]";
+	}
+
+	
+	
 
 }

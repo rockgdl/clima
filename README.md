@@ -12,7 +12,34 @@
 <br>
 instrucciones de instalacion , este proyecto es un proyecto elaborado en SpringBoot y  Java 17 , como Jdk de programacion 
 
-lo primero que hay que hacer es clonar la URL 
+lo primero que hay que hacer es clonar la URL  https://github.com/rockgdl/clima.git en tu computador, si lo haces con eclipse, sera necesario darle click derecho, importar , from Git , pegar la url
+y utilizar el siguiente usuario 
+
+usuario : rockgdl:
+token : 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
+ preguntara cual es la rama inicial, es importante seleccionar que se usara la de dev!!!!!
+
+una vez descargado  , preguntara como importar el proyecto, se debera seleccionar que se importe como proyecto general , finalizado  , tendremos una carpeta llamada clima, que es el nombre del proyecto y dentro de esta existira otra carpeta con el mismo nombre (clima) el cual internamente tendra unos archivos mvnw. mvnw.cmd y pom.xml los cuales debemos mover a la carpeta raiz , para poder convertirlo  a proyecto Maven , lo haremos de la siguiente manera, click derecho en el proyecto , configure, convertir proyecto maven lo cual empezara el desepaquetado y la conversion de proyecto maven 
+
+nos debera aparecer de la siguiente manera
+<img width="266" alt="image" src="https://github.com/rockgdl/clima/assets/45295477/18f8d7d3-5f2f-4911-be07-cb2b692035b1"> 
+
+dicho esto , es hora de iniciar la base de datos, la cual en la carpeta de recursos se encuentran 2 archivos, database_clima.sql y un Dockerfile :
+
+este contiene las instrucciones para bajar la imagen de msyql y hacer la configuracion de base de datos 
+
+a este paso abrimos una terminal donde podamos ingresar comandos de docker (dependiendo sistema operativo) wsl o cmd 
+
+y vamos a navegar al workspace donde instalamos el proyecto eclipse , por ejemplo c/Users/001109781/eclipse-workspace/clima/src/main/resources , ahi ejecutaremos el siguiente comando 
+podman build -t mysql_db .     // es en mi caso lo estoy haciendo atraves de Podman ya que Docker tiene tipo de licencia 
+
+
+
+
+
+
+
+
 
 ## Contents
   - [Github README PROFILE CATEGORY](#github-readme-profile-category)

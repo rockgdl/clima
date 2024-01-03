@@ -1,18 +1,12 @@
 <h1 align="center">Readme
 <p align="center"><i>instrucciones de instalacion para el proyecto Consulta de clima</i></p>
-<div align="center">
-  <a href="https://github.com/elangosundar/awesome-README-templates/stargazers"><img src="https://img.shields.io/github/stars/elangosundar/awesome-README-templates" alt="Stars Badge"/></a>
-<a href="https://github.com/elangosundar/awesome-README-templates/network/members"><img src="https://img.shields.io/github/forks/elangosundar/awesome-README-templates" alt="Forks Badge"/></a>
-<a href="https://github.com/elangosundar/awesome-README-templates/pulls"><img src="https://img.shields.io/github/issues-pr/elangosundar/awesome-README-templates" alt="Pull Requests Badge"/></a>
-<a href="https://github.com/elangosundar/awesome-README-templates/issues"><img src="https://img.shields.io/github/issues/elangosundar/awesome-README-templates" alt="Issues Badge"/></a>
-<a href="https://github.com/elangosundar/awesome-README-templates/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/elangosundar/awesome-README-templates?color=2b9348"></a>
-<a href="https://github.com/elangosundar/awesome-README-templates/blob/master/LICENSE"><img src="https://img.shields.io/github/license/elangosundar/awesome-README-templates?color=2b9348" alt="License Badge"/></a>
-</div>
-<br>
-<br>
-instrucciones de instalacion , este proyecto es un proyecto elaborado en SpringBoot y  Java 17 , como Jdk de programacion 
 
-lo primero que hay que hacer es clonar la URL  https://github.com/rockgdl/clima.git en tu computador, si lo haces con eclipse, sera necesario darle click derecho, importar , from Git , pegar la url
+<br>
+<br>
+Instrucciones de instalacion , este proyecto es un proyecto elaborado en SpringBoot y  Java 17 , como Jdk de programacion
+elaborado con eclipse  
+
+lo primero que hay que hacer es clonar la URL  https://github.com/rockgdl/clima.git en tu computador, si lo haces con eclipse, sera necesario darle abrir eclipse en la parte izquierda donde se localizan los proyectos darle click derecho, importar , from Git , pegar la url previa del proyecto en github 
 y utilizar el siguiente usuario 
 
 usuario : rockgdl:

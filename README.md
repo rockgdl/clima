@@ -14,6 +14,8 @@ token : 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
  preguntara cual es la rama inicial, es importante seleccionar que se usara la de dev!!!!!
 
 una vez descargado  , preguntara como importar el proyecto, se debera seleccionar que se importe como proyecto general , finalizado  , tendremos una carpeta llamada clima, que es el nombre del proyecto y dentro de esta existira otra carpeta con el mismo nombre (clima) el cual internamente tendra unos archivos mvnw. mvnw.cmd y pom.xml los cuales debemos mover a la carpeta raiz , para poder convertirlo  a proyecto Maven , lo haremos de la siguiente manera, click derecho en el proyecto , configure, convertir proyecto maven lo cual empezara el desepaquetado y la conversion de proyecto maven 
+<img width="515" alt="image" src="https://github.com/rockgdl/clima/assets/45295477/e1ec050d-f39d-4e5e-9d32-13b3ac8d919b">
+
 
 nos debera aparecer de la siguiente manera
 <img width="266" alt="image" src="https://github.com/rockgdl/clima/assets/45295477/18f8d7d3-5f2f-4911-be07-cb2b692035b1"> 
@@ -30,6 +32,11 @@ podman build -t mysql_db .     // es en mi caso lo estoy haciendo atraves de Pod
 seguido a esto hay que correr el siguiente comando para exponer el puerto de docker al puerto de nuestra computadora
 
 podman run -p 3306:3306  mysql_db
+
+esto correra docker y esperamos hasta ver el siguiente mensaje : ready for connections como en la siguiente imagen
+
+<img width="798" alt="image" src="https://github.com/rockgdl/clima/assets/45295477/e379ba5a-577c-4da5-adb7-cb4cc52bc25b">
+
 
 este comando construira la imagen de docker  añadiendo el archivo database_clima.sql, el cual contiene instrucciones de añadir un usuario por defecto de mysql y darle permisos para poder desplegar la aplicacion
 
@@ -57,6 +64,12 @@ la documentacion aunque inconclusa se podra ver en el siguiente endpoint
 
 http://localhost:8080/swagger-ui/index.html
 <img width="699" alt="image" src="https://github.com/rockgdl/clima/assets/45295477/3465c85c-9841-4586-86c7-5afc54d80b23">
+
+donde podemos ir agregando los metodos necesarios para el consumo desde la api 
+
+Para cualquier aclaracion estare disponible al skype skitrock@hotmail.com
+
+Fabian Piceno Roque
 
 
 # Contribute

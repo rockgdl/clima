@@ -10,7 +10,7 @@ lo primero que hay que hacer es clonar la URL  https://github.com/rockgdl/clima.
 y utilizar el siguiente usuario 
 
 usuario : rockgdl:
-token : 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
+token : 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
  preguntara cual es la rama inicial, es importante seleccionar que se usara la de dev!!!!!
 
 una vez descargado  , preguntara como importar el proyecto, se debera seleccionar que se importe como proyecto general , finalizado  , tendremos una carpeta llamada clima, que es el nombre del proyecto y dentro de esta existira otra carpeta con el mismo nombre (clima) el cual internamente tendra unos archivos mvnw. mvnw.cmd y pom.xml los cuales debemos mover a la carpeta raiz , para poder convertirlo  a proyecto Maven , lo haremos de la siguiente manera, click derecho en el proyecto , configure, convertir proyecto maven lo cual empezara el desepaquetado y la conversion de proyecto maven 

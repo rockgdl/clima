@@ -31,66 +31,35 @@ este contiene las instrucciones para bajar la imagen de msyql y hacer la configu
 a este paso abrimos una terminal donde podamos ingresar comandos de docker (dependiendo sistema operativo) wsl o cmd 
 
 y vamos a navegar al workspace donde instalamos el proyecto eclipse , por ejemplo c/Users/001109781/eclipse-workspace/clima/src/main/resources , ahi ejecutaremos el siguiente comando 
-podman build -t mysql_db .     // es en mi caso lo estoy haciendo atraves de Podman ya que Docker tiene tipo de licencia 
+podman build -t mysql_db .     // es en mi caso lo estoy haciendo atraves de Podman ya que Docker tiene tipo de licencia reemplazar podman por docker 
+
+seguido a esto hay que correr el siguiente comando para exponer el puerto de docker al puerto de nuestra computadora
+
+podman run -p 3306:3306  mysql_db
+
+este comando construira la imagen de docker  añadiendo el archivo database_clima.sql, el cual contiene instrucciones de añadir un usuario por defecto de mysql y darle permisos para poder desplegar la aplicacion
+
+dicho esto sera necesario dentro del proyecto abrir la Clase ClimaApplication.java y correrla , esto nos generara una aplicacion corriendo sobre tomcat, exponiendo 2 endpoints
+
+el primero localhost:8080/weather/guadalajara  // consulta el clima de la ciudad que va como parametro
+ el segundo localhost:8080/historico/latest  //obtiene el historico de las ultimas ciudades consultadas
+
+el primer servicio consume la restapi de la pagina  WeatherClima https://openweathermap.org/api usando un key que esta guardada en application.properties
+donde el parametro es la ciudad, en este caso es guadalajara una ciudad de Jalisco en Mexico, la cual respondera con los centigrados , y posteriormente se guardara en la base de datos
+
+al levantar el servicio ClimaApplication, este se levanta en un tomcat como servidor y expone los 2 endpoint 
+
+<img width="926" alt="image" src="https://github.com/rockgdl/clima/assets/45295477/59cf6eca-4eab-4de3-88dd-2ac959796937">
+
+este es un ejemplo de la respuesta que se obtendra guardado de la base de datos el historico 
+
+<img width="353" alt="image" src="https://github.com/rockgdl/clima/assets/45295477/3389f41e-eb8c-4bf4-92a4-a61a7bc465d9">
+
+este es un ejemplo  la base de datos 
+
+<img width="347" alt="image" src="https://github.com/rockgdl/clima/assets/45295477/ea3c13ed-770c-4668-b0d8-f7d110c44655">
 
 
-
-
-
-
-
-
-
-## Contents
-  - [Github README PROFILE CATEGORY](#github-readme-profile-category)
-  - [List out `Awesome README Profile` Tools](#list-out-awesome-readme-profile-tools)
-  - [List out `Awesome README Profile` Articles](#list-out-awesome-readme-profile-articles)
-  - [Contribute](#contribute)
-
-## Website
-
-Link : https://awesome-github-readme-profile.netlify.app
-
-<a href="https://awesome-github-readme-profile.netlify.app"><img src="https://raw.githubusercontent.com/elangosundar/awesome-README-templates/master/awesome-github-profile.png" alt="Awesome README Templates" /></a>
-
-
-## Github README PROFILE CATEGORY
-
-- [ ] [Art](art)
-- [ ] [Code Styled](code-styled)
-- [ ] [Creativity](creativity)
-- [ ] [Flowcharts](flowcharts)
-- [ ] [Default](default)
-- [ ] [Dynamic Realtime](dynamic-realtime)
-- [ ] [Elaborate](elaborate)
-- [ ] [Multimedia](multimedia)
-- [ ] [Short-and-sweet](short-and-sweet)
-- [ ] [Tabular](tabular)
-- [ ] [Pie Charts](pie-charts)
-
-# List out `Awesome README Profile` Tools
-
-- [Profile Summary For Github](https://profile-summary-for-github.com/search)
-- [Github Readme Stats](https://github.com/anuraghazra/github-readme-stats) - Dynamically generated stats for your github readmes
-- [Profile Activity Generator](https://github.com/omidnikrah/profile-activity-generator) - Generate custom profile activity for your profile README
-- [All Dev Stats in Readme](https://github.com/anmol098/waka-readme-stats) - Are you an early 🐤 or a night 🦉? When are you most productive during the day? What languages you code in? And other stuff... Let's check out in your readme!
-- [Visitor Badge](https://visitor-badge.glitch.me/#docs) - Count visitors for your README.md, Issues, PRs in GitHub
-- [1990s style Visitor Counter](https://twitter.com/ryanlanciaux/status/1283755637126705152) - Add a 1990s style visitor counter with one line of markdown.
-- [Vists Count](https://pufler.dev/git-badges/) - Count visitors for README.md that can be used with shields.io
-- [Shields Project](https://shields.io/) - Use Shields to create profile badges, compatible with Simple Icons
-- [Simple Icons](https://github.com/simple-icons/simple-icons#cdn-usage) - SVG icons for popular brands for your README.md files
-- [Laravel GitHub Profile Visit Counter](https://github.com/caneco/laravel-github-profile-view-counter) - Add on your Laravel project a quick-badge to count your profile visits.
-- [Dev Metrics in Readme](https://github.com/athul/waka-readme) - [WakaTime](https://wakatime.com/) Weekly Metrics on your Profile Readme
-- [Current UTC time](https://github.com/jojoee/jojoee) - Example code of server that can serve dynamic content on GitHub profile
-- [Github Activity in README](https://github.com/jamesgeorge007/github-activity-readme) - Updates `README.md` with the recent GitHub activity of a user
-- [Github Profile README Generator](https://github.com/rahuldkjain/github-profile-readme-generator) - This tool provides an easy way to create github profile readme with latest addons like `visitors count`, `github stats` etc.
-- [Dynamic Profile Page On Github](https://github.com/umutphp/github-action-dynamic-profile-page) - Get dynamically generated list of your commits (of the repositories that the action is configured) on GitHub profile readme.
-- [npm package downloads](https://github.com/maddhruv/github-readme-npm-downloads) - Show all of your npm packages and their total downloads
-- [Feedparser](https://pythonhosted.org/feedparser/) - Convenient processing of RSS files
-- [Github Profile README Generator](https://github.com/arturssmirnovs/github-profile-readme-generator) - This project allows you to create nice and simple github profile readme files.
-- [Github Gist Count Generator](https://github.com/lifeparticle/Gist-Count) - Get gist count for your github readmes.
-
-# List out `Awesome README Profile` Articles
 
 # Contribute
 

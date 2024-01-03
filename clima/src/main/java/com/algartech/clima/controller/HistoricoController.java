@@ -1,5 +1,10 @@
 package com.algartech.clima.controller;
-
+/**
+ * Author fpiceno
+ * Clase controller expone algunas rutas para su posterior manejo, metodos add , latest
+ * el cual recibe como parametro el nombre de la ciudad a guardar en la Base de datos
+ * 
+ */
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,36 +19,47 @@ import org.springframework.web.bind.annotation.RestController;
 import com.algartech.clima.entity.Historico;
 import com.algartech.clima.repository.HistoricoRepositoryDao;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 
-@RestController //This means that this class is a Controller
-@RequestMapping(path="/historico") // This means URL's start with /demo (after Application path)
+
+@RestController 
+@RequestMapping(path="/historico") 
+@Api(value = "HistoricoController", description = "Operaciones relacionadas con el histórico")
 public class HistoricoController {
 
 	
-	  private final HistoricoRepositoryDao historicoRepository;
+	  	private final HistoricoRepositoryDao historicoRepository;
 
 	    @Autowired
 	    public HistoricoController(HistoricoRepositoryDao historicoRepository) {
 	        this.historicoRepository = historicoRepository;
 	    }
   
-  
+  /*
+   * metodo addNewHistorico que recibe como parametro el nombre de la ciudad 
+   * se inserta en la base de datos 
+   * */
   @PostMapping(path="/add") 
+  @ApiOperation(value = "Añadir nuevo historico", response = String.class)
   public @ResponseBody String addNewHistorico (@RequestBody Historico request) {
-    // @ResponseBody means the returned String is the response, not a view name
-    // @RequestParam means it is a parameter from the GET or POST request
-	  System.out.println("entrando a ver el historico"+request);
-    Historico n = new Historico();
-    n.setCiudad(request.getCiudad());
+	  Historico n = new Historico();
+	  n.setCiudad(request.getCiudad());
+	  try {
+		  historicoRepository.save(n);
+	  }catch(Exception e) {
+		  e.printStackTrace();
+		  return e.getMessage();
+	  }
   
-    historicoRepository.save(n);
  
     return "Saved";
   }
 
-  @GetMapping(path="/all")
+  @GetMapping(path="/latest")
+  @ApiOperation(value = "Obtener los ultimos históricos", response = Iterable.class)
   public @ResponseBody Iterable<Historico> getAllHistorico() {
-    // This returns a JSON or XML with the users
-    return historicoRepository.findAll();
+
+    return historicoRepository.findFirst10ByOrderByHistoricoIDDesc();
   } 
 }

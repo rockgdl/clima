@@ -17,6 +17,7 @@ public class Historico {
 	  private Integer historicoID;
 
 	  private String ciudad;
+	  private Double temperatura;
 
 	public Integer getHistoricoID() {
 		return historicoID;
@@ -34,11 +35,21 @@ public class Historico {
 		this.ciudad = ciudad;
 	}
 
-	@Override
-	public String toString() {
-		return "Historico [historicoID=" + historicoID + ", ciudad=" + ciudad + "]";
+	public Double getTemperatura() {
+		return temperatura;
 	}
 
+	public void setTemperatura(Double temperatura) {
+		this.temperatura = temperatura;
+	}
+
+	@Override
+	public String toString() {
+		return "Historico [historicoID=" + historicoID + ", ciudad=" + ciudad + ", temperatura=" + temperatura + "]";
+	}
+
+	
+	
 	
 	
 

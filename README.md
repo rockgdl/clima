@@ -53,7 +53,9 @@ este es un ejemplo  la base de datos
 
 <img width="347" alt="image" src="https://github.com/rockgdl/clima/assets/45295477/ea3c13ed-770c-4668-b0d8-f7d110c44655">
 
+la documentacion aunque inconclusa se podra ver en el siguiente endpoint 
 
+http://localhost:8080/swagger-ui/index.html
 
 # Contribute
 
